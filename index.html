@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mesto</title>
-        <link rel="stylesheet" href="pages/index.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+
 <body class="page">
     <header class="header">
         <img class="header__logo" src="./images/logo.svg" alt="лого">
@@ -26,35 +28,35 @@
     <section class="elements">
         <ul class="elements__cards">
             <li class="card">
-            <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото1">
-            <p class="elements__text">Карачаевск</p>
-            <button class="elements__like"><img src="./images/heart.svg" alt="Лайк"></button>
+                <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото1">
+                <h2 class="elements__text">Карачаевск</h2>
+                <button class="elements__like"><img src="./images/heart.svg" alt="Лайк"></button>
             </li>
             <li class="card">
                 <img class="elements__image" src="./images/elbrus.jpg" alt="Фото2">
-                <p class="elements__text">Гора Эльбрус</p>
+                <h2 class="elements__text">Гора Эльбрус</h2>
                 <button class="elements__like"><img src="./images/heart.svg" alt="Лайк"></button>
             </li>
             <li class="card">
                 <img class="elements__image" src="./images/dombay.jpg" alt="Фото3">
-                <p class="elements__text">Домбай</p>
+                <h2 class="elements__text">Домбай</h2>
                 <button class="elements__like"><img src="./images/heart.svg" alt="Лайк"></button>
             </li>
             <li class="card">
                 <img class="elements__image" src="./images/elbrus.jpg" alt="Фото4">
-                <p class="elements__text">Гора Эльбрус</p>
+                <h2 class="elements__text">Гора Эльбрус</h2>
                 <button class="elements__like"><img src="./images/heart.svg" alt="Лайк"></button>
             </li>
             <li class="card">
                 <img class="elements__image" src="./images/dombay.jpg" alt="Фото5">
-                <p class="elements__text">Домбай</p>
+                <h2 class="elements__text">Домбай</h2>
                 <button class="elements__like"><img src="./images/heart.svg" alt="Лайк"></button>
             </li>
             <li class="card">
                 <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото6">
-                <p class="elements__text">Карачаево-Ч...</p>
+                <h2 class="elements__text">Карачаево-Ч...</h2>
                 <button class="elements__like"><img src="./images/heart.svg" alt="Лайк"></button>
-                </li>
+            </li>
         </ul>
     </section>
     <footer class="footer">
@@ -63,7 +65,9 @@
     <div class="popup popup_hiden">
         <div class="popup__container">
             <button class="popup__close-button"></button>
-            <button class="popup__submit-button"><p>Сохранить</p></button>
+            <button class="popup__submit-button">
+                <h3>Сохранить</h3>
+            </button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <p><input class="popup__name" name="popup__name" type="text" value="Жак&#8209;Ив&nbsp;Кусто"></p>
             <p><input class="popup__text" name="popup__text" type="text" value="Исследователь океана"></p>
@@ -71,4 +75,5 @@
     </div>
     <script src="./pages/index.js"></script>
 </body>
+
 </html>
