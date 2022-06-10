@@ -1,9 +1,9 @@
-.profile__info_button-image {
+.profile__button-image {
  padding: 7px;
 }
 
 @media screen and (max-width: 767px) {
-    .profile__info_button-image {
+    .profile__button-image {
       padding: 5.25px;
       max-width: 7.5px;
     }

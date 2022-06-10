@@ -1,4 +1,4 @@
-const button1 = document.querySelector('.profile__info_button-edit');
+const button1 = document.querySelector('.profile__button-edit');
 const popup = document.querySelector('.popup');
 const popupCloseButton = document.querySelector('.popup__close-button');
 
@@ -28,8 +28,8 @@ let jobInput = document.querySelector('.popup__text');
 // она никуда отправляться не будет
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
-    let profileName = document.querySelector('.profile__info_title');
-    let profilejob = document.querySelector('.profile__info_subtitle');
+    let profileName = document.querySelector('.profile__title');
+    let profilejob = document.querySelector('.profile__subtitle');
 
     profileName.textContent = popup__name.value;
     profilejob.textContent = popup__text.value;

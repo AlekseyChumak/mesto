@@ -9,6 +9,7 @@
   height: 50px;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
