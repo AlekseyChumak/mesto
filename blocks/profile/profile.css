@@ -1,0 +1,25 @@
+.profile {
+  display: grid;
+  padding: 36.25px 200px 0 200px;
+  margin: 0;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+  "avatar . . . . ."
+  "avatar profile . . . button-add"
+  "avatar profile . . . button-add"
+  "avatar profile . . . button-add"
+  "avatar profile . . . .";
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    padding: 42px 19px 0px 19px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr max-content max-content;
+    grid-template-areas:
+    "avatar"
+    "profile"
+    "button-add";
+  }
+}

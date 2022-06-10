@@ -1,0 +1,21 @@
+.profile__info {
+  max-width: 336px;
+  padding-left: 35px;
+  grid-area: profile;
+  display: grid;
+  gap: 16px 18px;
+  height: fit-content;
+  grid-template-areas:
+  "title button"
+  "subtitle subtitle";
+}
+
+@media screen and (max-width: 767px) {
+  .profile__info {
+    max-width:282px;
+    padding: 22.25px 0px 36px;
+    gap: 14px 10px;
+    grid-template-columns: repeat(2, max-content);
+    justify-self: center;
+  }
+}
