@@ -1,15 +1,11 @@
 .popup__submit-button {
-  position: absolute;
-  top: 243px;
-  left: 36px;
+  margin: 0 36px 37px 36px;
+  padding: 0;
   color: #FFFFFF;
   background-color: black;
   transition: .4s;
-  width: 358px;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -17,14 +13,12 @@
 
 .popup__submit-button:hover {
     opacity: 0.4;
-    cursor: url(../../../images/Layer\ 1\ 1.png), auto;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 767px) {
     .popup__submit-button {
-      top: 251px;
-      left: 22px;
-      width: 238px;
+      margin: 0 22px 25px 22px;
       height:  46px;
       font-size: 14px;
       line-height: 17px;

@@ -1,14 +1,17 @@
 .elements__like {
+  background-image: url(../../../images/heart.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 19px;
   background-color: transparent;
   border: none;
-  align-self: center;
-  padding-right: 20px;
 }
 
 .elements__like:hover {
   transition: .4s;
   opacity: 0.4;
-  cursor: url(../../../images/Layer\ 1\ 1.png), auto;
+  cursor: pointer;
 }
 
 .elements__like:active {

@@ -1,25 +1,22 @@
 .profile {
-  display: grid;
-  padding: 36.25px 200px 0 200px;
-  margin: 0;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas:
-  "avatar . . . . ."
-  "avatar profile . . . button-add"
-  "avatar profile . . . button-add"
-  "avatar profile . . . button-add"
-  "avatar profile . . . .";
+  width: calc(100% - 400px);
+  margin: auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and ( max-width:1023px) {
   .profile {
-    padding: 42px 19px 0px 19px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 1fr max-content max-content;
-    grid-template-areas:
-    "avatar"
-    "profile"
-    "button-add";
+      width: calc(100% - 140px);
+  }
+}
+
+@media screen and ( max-width:767px) {
+  .profile {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
   }
 }
