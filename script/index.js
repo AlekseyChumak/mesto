@@ -3,8 +3,8 @@ const popup = document.querySelector('.popup');
 const popupCloseButton = document.querySelector('.popup__close-button');
 
 const formElement = document.querySelector('.popup__info');
-const nameInput =  document.querySelector('.popup__input_name_form');
-const jobInput = document.querySelector('.popup__input_text_form');
+const nameInput =  document.querySelector('.popup__input_position_top');
+const jobInput = document.querySelector('.popup__input_position_buttom');
 
 const profileName = document.querySelector('.profile__title');
 const profilejob = document.querySelector('.profile__subtitle');
@@ -21,6 +21,8 @@ function closePopupOnQ (e) {
 function openPopup() {
     popup.classList.remove('popup_hiden');
     document.addEventListener('keypress', closePopupOnQ);
+    nameInput.value = profileName.textContent;
+    jobInput.value = profilejob.textContent;
 }
 
 // Функция закрытия попапа
@@ -29,25 +31,6 @@ function closePopup() {
     document.removeEventListener('keypress', closePopupOnQ);
 }
 
-// Слушатель клика на открытие
-buttonEdit.addEventListener('click', function() {
-    openPopup();
-    nameInput.value = profileName.textContent;
-    jobInput.value = profilejob.textContent;
-})
-
-// Слушатель клика на закрытие
-popupCloseButton.addEventListener('click', function() {
-    closePopup();
-})
-
-popup.addEventListener('click', function (e){
-    if (e.target === e.currentTarget) {
-        closePopup();
-    }
-})
-
-
 // Обработчик «отправки» формы
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
@@ -55,6 +38,20 @@ function formSubmitHandler (evt) {
     profilejob.textContent = jobInput.value;
     closePopup();
 }
+
+
+popup.addEventListener('click', function (e){
+    if (e.target === e.currentTarget) {
+        closePopup();
+    }
+})
+
+// Слушатель клика на открытие
+buttonEdit.addEventListener('click', openPopup);
+
+// Слушатель клика на закрытие
+popupCloseButton.addEventListener('click', closePopup);
+
 
 // Отправка изменений в профиль
 formElement.addEventListener('submit', formSubmitHandler); 

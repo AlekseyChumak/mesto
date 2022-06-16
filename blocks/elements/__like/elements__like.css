@@ -6,15 +6,10 @@
   height: 19px;
   background-color: transparent;
   border: none;
+  transition: opacity 0.4s;
 }
 
 .elements__like:hover {
-  transition: .4s;
   opacity: 0.4;
   cursor: pointer;
-}
-
-.elements__like:active {
-  background-color: black;
-  transition: background 0s;
 }
