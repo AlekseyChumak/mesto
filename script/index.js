@@ -10,6 +10,15 @@ const profileName = document.querySelector('.profile__title');
 const profilejob = document.querySelector('.profile__subtitle');
 
 
+// like
+const card = document.querySelector('.card')
+
+const likeButton = card.querySelector('.elements__like');
+       likeButton.addEventListener('click', function () {
+               likeButton.classList.toggle('elements__like_active');
+           });
+
+
 // Функция закрытия попапа по кнопке Q
 function closePopupOnQ (e) {
     if (e.code === 'KeyQ') {
