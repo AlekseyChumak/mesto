@@ -1,0 +1,16 @@
+.popup__figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  min-width: 430px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__figure {
+      min-width: 240px;
+  }
+}

@@ -1,0 +1,15 @@
+.elements__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 282px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .elements__card {
+      justify-self: center;
+    }
+  }

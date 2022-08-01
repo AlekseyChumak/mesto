@@ -13,3 +13,8 @@
   opacity: 0.4;
   cursor: pointer;
 }
+
+.elements__like:active {
+  opacity: 1;
+  background-image: url(../../../images/like_active.png);
+}
