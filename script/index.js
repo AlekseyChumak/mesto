@@ -17,10 +17,10 @@ const urlAdd = document.querySelector(".popup__input_add_url");
 
 // Кнопки
 const buttonEdit = document.querySelector(".profile__button-edit");
-const popupCloseButton = document.querySelector(".popup__close-button_edit");
+const buttonCloseEdit = document.querySelector(".popup__close_edit");
 const buttonAdd = document.querySelector(".profile__button-add");
-const closeButtonAdd = document.querySelector(".popup__close-button_add");
-const imgCloseButton = document.querySelector(".popup__close-button_img");
+const buttonCloseAdd = document.querySelector(".popup__close_add");
+const buttonCloseImg = document.querySelector(".popup__close_img");
 
 // Tamplate
 const elementsTemplateCard = document.querySelector(".elements__cards");
@@ -116,15 +116,15 @@ buttonEdit.addEventListener("click", () => openPopup(popupProfile));
 buttonAdd.addEventListener("click", () => openPopup(popupCardAdd));
 
 // Слушатель клика на закрытие
-popupCloseButton.addEventListener("click", () => {
+buttonCloseEdit.addEventListener("click", () => {
   closePopup(popupProfile);
 });
 
-closeButtonAdd.addEventListener("click", () => {
+buttonCloseAdd.addEventListener("click", () => {
   closePopup(popupCardAdd);
 });
 
-imgCloseButton.addEventListener("click", () => {
+buttonCloseImg.addEventListener("click", () => {
   closePopup(popupOpenImg);
 });
 
