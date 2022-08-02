@@ -17,7 +17,7 @@ const urlAdd = document.querySelector(".popup__input_add_url");
 
 // Кнопки
 const buttonEdit = document.querySelector(".profile__button-edit");
-const popupCloseButton = document.querySelector(".popup__close-button");
+const popupCloseButton = document.querySelector(".popup__close-button_edit");
 const buttonAdd = document.querySelector(".profile__button-add");
 const closeButtonAdd = document.querySelector(".popup__close-button_add");
 const imgCloseButton = document.querySelector(".popup__close-button_img");
