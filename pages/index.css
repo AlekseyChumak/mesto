@@ -11,10 +11,12 @@
 @import url(../blocks/popup/__input/_position/popup__input_position_buttom.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__close-button/_img/popup__close-button_img.css);
+@import url(../blocks/popup/__close-button/_add/popup__close-button_add.css);
 @import url(../blocks/popup/__input/_add/popup__input_add_title.css);
 @import url(../blocks/popup/__input/_add/popup__input_add_url.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
 @import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__type/_open-img/popup_type_open-img.css);
 @import url(../blocks/popup/__img/popup__img.css);
 @import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/__img-title/popup__img-title.css);
