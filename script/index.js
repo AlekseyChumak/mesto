@@ -1,5 +1,6 @@
 // Popups
-const formElement = document.querySelector(".popup__info_edit");
+const formProfile = document.querySelector(".popup__info_edit_profile");
+const formNewCard = document.querySelector(".popup__info_add_card");
 const popupProfile = document.querySelector(".popup_type_edit");
 const popupCardAdd = document.querySelector(".popup_type_new-card");
 const popupOpenImg = document.querySelector(".popup_type_open-img");
@@ -17,10 +18,10 @@ const urlAdd = document.querySelector(".popup__input_add_url");
 
 // Кнопки
 const buttonEdit = document.querySelector(".profile__button-edit");
-const buttonCloseEdit = document.querySelector(".popup__close_edit");
+const buttonCloseEdit = document.querySelector(".popup__container_close_edit");
 const buttonAdd = document.querySelector(".profile__button-add");
-const buttonCloseAdd = document.querySelector(".popup__close_add");
-const buttonCloseImg = document.querySelector(".popup__close_img");
+const buttonCloseAdd = document.querySelector(".popup__container_close_add");
+const buttonCloseImg = document.querySelector(".popup__figure_close_img");
 
 // Tamplate
 const elementsTemplateCard = document.querySelector(".elements__cards");
@@ -36,10 +37,6 @@ function closeEsc(evt) {
   }
 }
 
-// Автоматическое заполнение формы профиля 
-nameInput.value = profileName.textContent;
-jobInput.value = profilejob.textContent;
-
 // Функция открытия попапа
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -51,7 +48,7 @@ function closePopup(popup) {
 }
 
 // Обработчик «отправки» формы
-function sendformSubmit(evt) {
+function sendFormProfile(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profilejob.textContent = jobInput.value;
@@ -110,7 +107,11 @@ function addCardSubmitHandler(evt) {
 }
 
 // Слушатель клика на открытие редактирование профиля
-buttonEdit.addEventListener("click", () => openPopup(popupProfile));
+buttonEdit.addEventListener("click", () => {
+// Автоматическое заполнение формы профиля 
+nameInput.value = profileName.textContent;
+jobInput.value = profilejob.textContent;
+openPopup(popupProfile)});
 
 // Слушатель клика на открытие добавление карточки
 buttonAdd.addEventListener("click", () => openPopup(popupCardAdd));
@@ -129,6 +130,6 @@ buttonCloseImg.addEventListener("click", () => {
 });
 
 // Отправка изменений в профиль
-formElement.addEventListener("submit", sendformSubmit);
+formProfile.addEventListener("submit", sendFormProfile);
 
-popupCardAdd.addEventListener("submit", addCardSubmitHandler);
+formNewCard.addEventListener("submit", addCardSubmitHandler);
