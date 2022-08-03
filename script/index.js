@@ -18,10 +18,10 @@ const urlAdd = document.querySelector(".popup__input_add_url");
 
 // Кнопки
 const buttonEdit = document.querySelector(".profile__button-edit");
-const buttonCloseEdit = document.querySelector(".popup__container_close_edit");
+const buttonCloseEdit = document.querySelector(".button__close_type_edit");
 const buttonAdd = document.querySelector(".profile__button-add");
-const buttonCloseAdd = document.querySelector(".popup__container_close_add");
-const buttonCloseImg = document.querySelector(".popup__figure_close_img");
+const buttonCloseAdd = document.querySelector(".button__close_type_new-card");
+const buttonCloseImg = document.querySelector(".button__close_type_img");
 
 // Tamplate
 const elementsTemplateCard = document.querySelector(".elements__cards");

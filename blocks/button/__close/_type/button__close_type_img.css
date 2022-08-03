@@ -1,4 +1,4 @@
-.popup__figure_close_img {
+.button__close_type_img {
     background-image: url(../../../../images/Close\ Icon.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -13,14 +13,14 @@
     right: -40px;
 }
 
-.popup__figure_close_img:hover {
+.button__close_type_img:hover {
     opacity: 0.4;
     transition: .4s;
     cursor: pointer;
   }
 
 @media screen and (max-width: 767px) {
-    .popup__figure_close_img {
+    .button__close_type_img {
         top: -28px;
         right: 0;
         width: 20px;
