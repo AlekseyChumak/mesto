@@ -1,4 +1,4 @@
-.popup__input_error {
+.popup__error {
   display: block;
   min-height: 30px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -7,5 +7,5 @@
   font-size: 12px;
   line-height: 15px;
   color: rgba(255, 0, 0, 1);
-  margin: 5px 230px 13px 36px;
+  margin: 5px 36px 13px 36px;
 }
