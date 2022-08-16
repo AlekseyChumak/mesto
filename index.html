@@ -36,11 +36,14 @@
     <div class="popup popup_type_edit">
         <div class="popup__container">
             <button class="popup__button popup__button_close_edit" type="button" aria-label="Закрытие"></button>
-            <form class="popup__info popup__info_edit_profile">
+            <form class="popup__info popup__info_edit_profile" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__input popup__input_position_top" name="nameInput" type="text" placeholder="Имя">
-                <input class="popup__input popup__input_position_buttom" name="jobInput" type="text"
-                    placeholder="Профессия">
+                <input class="popup__input popup__input_position_top" id="name-input" type="text" placeholder="Имя"
+                    minlength="2" maxlength="40" required>
+                <span class="popup__input_error name-input-error"></span>
+                <input class="popup__input popup__input_position_buttom" id="job-input" type="text"
+                    placeholder="Профессия" minlength="2" maxlength="200" required>
+                <span class="popup__input_error job-input-error"></span>
                 <button class="popup__submit-button" type="submit" aria-label="Сохранение">
                     Сохранить
                 </button>
@@ -50,10 +53,14 @@
     <div class="popup popup_type_new-card">
         <div class="popup__container">
             <button class="popup__button popup__button_close_new-card" type="button" aria-label="Закрытие"></button>
-            <form class="popup__info popup__info_add_card">
+            <form class="popup__info popup__info_add_card" novalidate>
                 <h2 class="popup__title">Новое место</h2>
-                <input class="popup__input popup__input_add_title" name="title-add" type="text" placeholder="Название">
-                <input class="popup__input popup__input_add_url" name="url" type="url" placeholder="Ссылка на картинку">
+                <input class="popup__input popup__input_add_title" id="title-add" type="text" placeholder="Название"
+                    minlength="2" maxlength="30" required>
+                <span class="popup__input_error title-add-error"></span>
+                <input class="popup__input popup__input_add_url" id="url" type="url" placeholder="Ссылка на картинку"
+                    required>
+                <span class="popup__input_error url-error"></span>
                 <button class="popup__submit-button" type="submit" aria-label="Создать">
                     Создать
                 </button>
@@ -79,6 +86,7 @@
     </template>
     <script src="./script/initialCards.js" defer></script>
     <script src="./script/index.js" defer></script>
+    <script src="./script/validate.js" defer></script>
 </body>
 
 </html>
