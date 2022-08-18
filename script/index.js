@@ -118,8 +118,7 @@ function addCardSubmitHandler(evt) {
   const cardElement = createCard(name, link);
   renderCard(cardElement);
   closePopup(popupCardAdd);
-  nameAdd.value = "";
-  urlAdd.value = "";
+  evt.target.reset();
 };
 
 // Слушатель клика на открытие редактирование профиля
@@ -128,11 +127,16 @@ buttonEdit.addEventListener("click", () => {
   // Автоматическое заполнение формы профиля 
 nameInput.value = profileName.textContent;
 jobInput.value = profilejob.textContent;
-openPopup(popupProfile)
+openPopup(popupProfile);
 });
 
+
+
+
 // Слушатель клика на открытие добавление карточки
-buttonAdd.addEventListener("click", () => openPopup(popupCardAdd));
+buttonAdd.addEventListener("click", () => {
+  openPopup(popupCardAdd);
+});
 
 // Слушатель клика на закрытие
 buttonCloseEdit.addEventListener("click", () => {
