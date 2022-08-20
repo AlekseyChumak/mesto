@@ -22,14 +22,12 @@ const buttonCloseEdit = document.querySelector(".popup__button_close_edit");
 const buttonAdd = document.querySelector(".profile__button-add");
 const buttonCloseAdd = document.querySelector(".popup__button_close_new-card");
 const buttonCloseImg = document.querySelector(".popup__button_close_img");
-
+const buttonFormNewCard = formNewCard.querySelector(".popup__submit-button");
 // Tamplate
 const elementsTemplateCard = document.querySelector(".elements__cards");
 const element = document.querySelector(".elements");
 const template = document.querySelector("#item__template").content;
 const cardTemplate = template.querySelector(".elements__card");
-
-
 
 // Функция закрытия попапа по кнопке ESC
 function closeEsc(evt) {
@@ -37,33 +35,32 @@ function closeEsc(evt) {
     const popupOpen = document.querySelector(".popup_opened");
     closePopup(popupOpen);
   }
-};
+}
 
 // Функция закрытия попапа по клику Overlay
-function closeClickOverlay (evt) {
-  if (evt.target.classList.contains('popup')) {
-  closePopup(evt.target);
+function closeClickOverlay(evt) {
+  if (evt.target.classList.contains("popup")) {
+    closePopup(evt.target);
   }
-};
+}
 
-    
 // Функция открытия попапа
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  document.addEventListener('keydown', closeEsc);
-  document.addEventListener('click', closeClickOverlay);
-};
+  document.addEventListener("keydown", closeEsc);
+  document.addEventListener("click", closeClickOverlay);
+}
 
 // Функция закрытия попапа
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
-  document.removeEventListener('keydown', closeEsc);
-  document.removeEventListener('click', closeClickOverlay);
-};
+  document.removeEventListener("keydown", closeEsc);
+  document.removeEventListener("click", closeClickOverlay);
+}
 
 // Обработчик «отправки» формы
 function sendFormProfile(evt) {
-  evt.preventDefault();  // отменям стандартное поведение браузера
+  evt.preventDefault(); // отменям стандартное поведение браузера
   profileName.textContent = nameInput.value;
   profilejob.textContent = jobInput.value;
   closePopup(popupProfile);
@@ -103,7 +100,7 @@ const createCard = (name, link) => {
 
 function renderCard(cardElement) {
   elementsTemplateCard.prepend(cardElement);
-};
+}
 
 initialCards.forEach((item) => {
   const cardElement = createCard(item.name, item.link);
@@ -112,29 +109,30 @@ initialCards.forEach((item) => {
 
 //Функция добавления новой карточки
 function addCardSubmitHandler(evt) {
-  evt.preventDefault();  // отменям стандартное поведение браузера
+  evt.preventDefault(); // отменям стандартное поведение браузера
   const name = nameAdd.value;
   const link = urlAdd.value;
   const cardElement = createCard(name, link);
   renderCard(cardElement);
   closePopup(popupCardAdd);
   evt.target.reset();
-};
+}
 
 // Слушатель клика на открытие редактирование профиля
 buttonEdit.addEventListener("click", () => {
-
-  // Автоматическое заполнение формы профиля 
-nameInput.value = profileName.textContent;
-jobInput.value = profilejob.textContent;
-openPopup(popupProfile);
+  formProfile.reset();
+  clearInputsError(formProfile, validationConfig);
+  // Автоматическое заполнение формы профиля
+  nameInput.value = profileName.textContent;
+  jobInput.value = profilejob.textContent;
+  openPopup(popupProfile);
 });
-
-
-
 
 // Слушатель клика на открытие добавление карточки
 buttonAdd.addEventListener("click", () => {
+  formNewCard.reset();
+  clearInputsError(formNewCard, validationConfig);
+  disebledSubmitButton(buttonFormNewCard, validationConfig);
   openPopup(popupCardAdd);
 });
 
