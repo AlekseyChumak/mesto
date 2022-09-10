@@ -24,9 +24,9 @@ export class FormValidator {
     };
 
     // очистим поля от ошибок
-    _clearInputsError (formElement) {
+    _clearInputsError () {
         this._inputList.forEach((input) => {
-          this._hideInputError(formElement, input, this._validationConfig);
+          this._hideInputError(formElement, input);
     });
     };
   
@@ -50,8 +50,8 @@ export class FormValidator {
     };
   
     // Функция переключения состояния кнопки
-    _toggleButtonState (inputList) {
-        if (this._hasInvalidInput(inputList)) {
+    _toggleButtonState () {
+        if (this._hasInvalidInput(this._inputList)) {
             this._disebledSubmitButton();
             } else {
            this._enableSubmitButton();           
@@ -68,7 +68,7 @@ export class FormValidator {
     };
 
     // Добавление обработчика всем полям формы
-    _setEventListeners (formElement) {
+    _setEventListeners () {
         this._toggleButtonState();
         this._inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', () => {

@@ -1,55 +1,60 @@
-import { initialCards } from './initialCards.js';
 import { openPopup, popupOpenImg } from './index.js';
 
 export class Card {
-    constructor(name, link, templete){
+    constructor({name, link}, templateSelector){
       this._name = name;
       this._link = link;
-      this._templete = templete;
+      this._templateSelector = templateSelector;
+      console.dir(this._templateSelector);
     }
 
     _getTemplate() {
         const cardElement = document
         .querySelector('#item__template')
         .content
-        .querySelector('.elements__card')
+        .querySelector(this._templateSelector)
         .cloneNode(true);
 
         return cardElement;
     };
 
-    generateCard() {
-       
+    generateCard() {       
         this._element = this._getTemplate();
-        this._element.querySelector('.elements__text').textContent = this._name;
-        this._element.querySelector('.elements__image').src = this._link;
-        this._element.querySelector('.elements__image').alt = this._name;
+
+        this._imageElement = this._element.querySelector('.elements__image');
+        this._textElement = this._element.querySelector('.elements__text');
+        this._likeElement = this._element.querySelector('.elements__like');
+        this._deleteElement = this._element.querySelector('.elements__delete-button');
+
+        this._textElement.textContent = this._name;
+        this._imageElement.src = this._link;
+        this._imageElement.alt = this._name;
         this._setEventListeners();
         return this._element
     };
 
-    _buttonLike() {
-        this._element.querySelector('.elements__like').classList.toggle('elements__like_active');
+    _likeButton() {
+        this._likeElement.classList.toggle('elements__like_active');
     }
 
-    _buttonDelete() {
+    _deleteButton() {
         this._element.remove();
         this._element = null;
     }
 
     _setEventListeners() {
         //Слушатель кнопки лайк
-        this._element.querySelector('.elements__like').addEventListener('click', () => {
-            this._buttonLike()
+        this._likeElement.addEventListener('click', () => {
+            this._likeButton()
         });
         
         // Слушатель кнопки удаления карточки
-        this._element.querySelector('.elements__delete-button').addEventListener('click', () => {
-            this._buttonDelete()
+        this._deleteElement.addEventListener('click', () => {
+            this._deleteButton()
         });
 
         // Слушатель клика на открытие изображения
-        this._element.querySelector('.elements__image').addEventListener('click', () => {
+        this._imageElement.addEventListener('click', () => {
             openPopup(popupOpenImg);
             document.querySelector('.popup__img').src = this._link;
             document.querySelector('.popup__img').alt = this._name;
@@ -60,10 +65,3 @@ export class Card {
 
 };
 
-initialCards.forEach((item) => {
-    const card = new Card(item.name, item.link, '.elements__card');
-    const cardElement = card.generateCard();
- 
-   // Добавляем в DOM
-   document.querySelector('.elements__cards').append(cardElement);
- });
