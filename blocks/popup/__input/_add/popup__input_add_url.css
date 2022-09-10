@@ -1,9 +1,9 @@
 .popup__input_add_url {
-  margin: 13px 36px 0px 36px;
+  margin: 0px 36px 0px 36px;
 }
 
 @media screen and ( max-width:767px) {
     .popup__input_add_url {
-      margin: 13px 22px 0px 22px;
+      margin: 0px 22px 0px 22px;
     }
 }

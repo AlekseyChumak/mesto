@@ -1,11 +1,11 @@
 .popup__error {
   display: block;
-  min-height: 30px;
+  height: 12px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   color: rgba(255, 0, 0, 1);
-  margin: 5px 36px 13px 36px;
+  margin: 5px 36px 6px 36px;
 }
