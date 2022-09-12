@@ -74,10 +74,11 @@ function closeClickOverlay(popup) {
   })
 }
 
-closeClickOverlay(popupProfile);
-closeClickOverlay(popupCardAdd);
-closeClickOverlay(popupOpenImg);
 
+// поиск всех попапов для закрытия по клику Overlay и клику на крест
+document.querySelectorAll('.popup').forEach( popup => {
+  closeClickOverlay(popup);
+});
 
 // Функция открытия попапа
 export function openPopup(popup) {
