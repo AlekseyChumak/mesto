@@ -3,7 +3,7 @@ import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
 import { initialCards } from './initialCards.js';
 
-export const validationConfig = {
+const validationConfig = {
   formSelector: ".popup__info",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__submit-button",
@@ -13,11 +13,11 @@ export const validationConfig = {
   formAdd: ".popup__info_add_card",
 };
 
-export const templateSelector = {
-  itemTemplate: ".item__template",
+const templateSelector = {
+  templateElement: ".elements__card",
   elementsTemplateCard: ".elements__cards",
   element: ".elements",
-  cardTemplate: ".elements__card"
+  cardTemplate:  ".item__template"
 }
 
 // Popups

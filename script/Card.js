@@ -5,31 +5,32 @@ export class Card {
       this._name = name;
       this._link = link;
       this._templateSelector = templateSelector;
+      console.log(this._templateSelector);
     }
+    
 
-    _getTemplate() {
-        const cardElement = document
-        .querySelector('#item__template')
-        .content
-        .cloneNode(true);
-
-        return cardElement;
-    };
+    _getTemplate() { 
+        const cardElement = document 
+        .querySelector(this._templateSelector) 
+        .content 
+        .querySelector('.elements__card')
+        .cloneNode(true); 
+        return cardElement; 
+    };  
 
     generateCard() {       
-        this._element = this._getTemplate();
+        this._element = this._getTemplate();  // создаём элемент
 
         this._imageElement = this._element.querySelector('.elements__image');
         this._textElement = this._element.querySelector('.elements__text');
         this._likeElement = this._element.querySelector('.elements__like');
         this._deleteElement = this._element.querySelector('.elements__delete-button');
-        this._cardTemplate = this._element.querySelector('.elements__card');
 
         this._textElement.textContent = this._name;
         this._imageElement.src = this._link;
         this._imageElement.alt = this._name;
-        this._setEventListeners();
-        return this._element
+        this._setEventListeners();  // добавляем обработчики
+        return this._element // возвращаем наружу
     };
 
     _likeButton() {
@@ -37,8 +38,8 @@ export class Card {
     }
 
     _deleteButton() {
-        this._cardTemplate.remove();
-        this._cardTemplate = null;
+        this._element.remove();
+        this._element = null;
     }
 
     _setEventListeners() {
